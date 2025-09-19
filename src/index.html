@@ -91,7 +91,7 @@ tags: "sitemap"
                 width: 100%;
                 height: 500px;
                 background: #000;
-                border-radius: 20px;
+                border-radius: 10px;
                 overflow: hidden;
                 position: relative;
             ">
@@ -102,6 +102,12 @@ tags: "sitemap"
                      style="width: 100%; height: 100%; object-fit: cover; display: none;" 
                      class="qura-screen" />
                 <img src="/assets/images/pic03.jpg" alt="Qura App Screen" 
+                     style="width: 100%; height: 100%; object-fit: cover; display: none;" 
+                     class="qura-screen" />
+                                     <img src="/assets/images/pic04.jpg" alt="Qura App Screen" 
+                     style="width: 100%; height: 100%; object-fit: cover; display: none;" 
+                     class="qura-screen" />
+                <img src="/assets/images/pic05.jpg" alt="Qura App Screen" 
                      style="width: 100%; height: 100%; object-fit: cover; display: none;" 
                      class="qura-screen" />
             </div>
@@ -393,10 +399,10 @@ $(document).ready(function() {
     
     // Rotate images
     setInterval(function() {
-        images.eq(current).fadeOut(500);
+        images.eq(current).fadeOut(1000);
         current = (current + 1) % images.length;
-        images.eq(current).fadeIn(500);
-    }, 3000);
+        images.eq(current).fadeIn(1000);
+    }, 5000);
 });
 </script>
 
