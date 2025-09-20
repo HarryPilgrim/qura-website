@@ -57,16 +57,17 @@ tags: "sitemap"
         padding: 0 3em;
         width: 100%;
     ">
-        <!-- Text content on left -->
-        <div style="flex: 1; text-align: left;">
-            <h2>Qura</h2>
-            <p>Take control of your life<br />
-            Break free from porn addiction<br />
-        App coming soon- Android/IOS</p>
-            <ul class="actions special" style="justify-content: flex-start;">
-                <li><a href="#cta" class="button primary">Join Waitlist</a></li>
-            </ul>
-        </div>
+<div style="flex: 1; text-align: left;">
+    <h2>Qura</h2>
+    <p style="line-height: 1.8;">
+        Take control of your life<br />
+        Break free from porn addiction<br />
+        <span style="font-size: 0.9em; opacity: 0.9;">App coming soon - Android/iOS</span>
+    </p>
+    <ul class="actions special" style="justify-content: flex-start;">
+        <li><a href="#cta" class="button primary scrolly">Join Waitlist</a></li>
+    </ul>
+</div>
         
         <!-- Phone mockup on right -->
         <div style="
@@ -394,6 +395,13 @@ tags: "sitemap"
     }
     #banner .inner .actions.special {
         justify-content: center !important;
+    }
+}
+
+
+@media screen and (max-width: 736px) {
+    #banner .inner br {
+        display: block !important;
     }
 }
 </style>

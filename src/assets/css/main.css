@@ -3563,6 +3563,12 @@ input, select, textarea {
 
 /* Banner */
 
+
+	#banner p {
+        white-space: pre-line;
+	}
+
+
 	#banner {
 		display: -moz-flex;
 		display: -webkit-flex;
@@ -3719,6 +3725,8 @@ input, select, textarea {
 				#banner br {
 					display: none;
 				}
+
+				
 
 				#banner .more {
 					display: none;
