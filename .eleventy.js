@@ -114,6 +114,9 @@ module.exports = function (eleventyConfig) {
      */
     eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
 
+    // Copy JS files to the correct location
+
+
     // ═════════════════════════════════════════════════════════════════════════
     // BUILD CONFIGURATION
     // Define input/output directories and template engine

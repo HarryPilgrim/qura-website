@@ -420,12 +420,26 @@ tags: "sitemap"
 <!-- Scripts -->
 <!-- Scripts -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="/js/jquery.scrollex.min.js"></script>
-<script src="/js/jquery.scrolly.min.js"></script>
-<script src="/js/browser.min.js"></script>
-<script src="/js/breakpoints.min.js"></script>
-<script src="/js/util.js"></script>
- <script src="https://html5up.net/uploads/demos/spectral/assets/js/main.js"></script>
+<script>
+// Detect if local or production
+if (window.location.hostname === 'localhost') {
+    // Local paths
+    document.write('<script src="/js/jquery.scrollex.min.js"><\/script>');
+    document.write('<script src="/js/jquery.scrolly.min.js"><\/script>');
+    document.write('<script src="/js/browser.min.js"><\/script>');
+    document.write('<script src="/js/breakpoints.min.js"><\/script>');
+    document.write('<script src="/js/util.js"><\/script>');
+    document.write('<script src="/js/main.js"><\/script>');
+} else {
+    // Production - use CDN fallbacks
+    document.write('<script src="/assets/js/jquery.scrollex.min.js"><\/script>');
+    document.write('<script src="/assets/js/jquery.scrolly.min.js"><\/script>');
+    document.write('<script src="/assets/js/browser.min.js"><\/script>');
+    document.write('<script src="/assets/js/breakpoints.min.js"><\/script>');
+    document.write('<script src="/assets/js/util.js"><\/script>');
+    document.write('<script src="/assets/js/main.js"><\/script>');
+}
+</script>
 
  <style>
 @media screen and (max-width: 980px) {
