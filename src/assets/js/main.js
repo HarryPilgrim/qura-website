@@ -83,16 +83,4 @@
 })(jQuery);
 
 
-// Qura phone screen rotation
-$(function() {
-    var $slides = $('.qura-screen-slider img');
-    var currentSlide = 0;
-    
-    if ($slides.length > 1) {
-        setInterval(function() {
-            $slides.eq(currentSlide).removeClass('active');
-            currentSlide = (currentSlide + 1) % $slides.length;
-            $slides.eq(currentSlide).addClass('active');
-        }, 3000); // Change every 3 seconds
-    }
-});
+
