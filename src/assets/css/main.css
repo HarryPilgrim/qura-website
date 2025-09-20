@@ -101,7 +101,7 @@ input, select, textarea {
 
 	body, input, select, textarea {
 		color: #fff;
-		font-family: "Open Sans", Helvetica, sans-serif;
+		font-family: Helvetica, sans-serif;
 		font-display: swap; /* Add this */
 		font-size: 15pt;
 		font-weight: 400;
