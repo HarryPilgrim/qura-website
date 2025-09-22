@@ -450,20 +450,20 @@ tags: "sitemap"
 // Detect if local or production
 if (window.location.hostname === 'localhost') {
     // Local paths
-    document.write('<script src="/js/jquery.scrollex.min.js"><\/script>');
-    document.write('<script src="/js/jquery.scrolly.min.js"><\/script>');
-    document.write('<script src="/js/browser.min.js"><\/script>');
-    document.write('<script src="/js/breakpoints.min.js"><\/script>');
-    document.write('<script src="/js/util.js"><\/script>');
-    document.write('<script src="/js/main.js"><\/script>');
+    document.write('<script src="/js/jquery.scrollex.min.js" defer><\/script>');
+    document.write('<script src="/js/jquery.scrolly.min.js" defer><\/script>');
+    document.write('<script src="/js/browser.min.js" defer><\/script>');
+    document.write('<script src="/js/breakpoints.min.js" defer><\/script>');
+    document.write('<script src="/js/util.js" defer><\/script>');
+    document.write('<script src="/js/main.js" defer><\/script>');
 } else {
     // Production - use CDN fallbacks
-    document.write('<script src="/assets/js/jquery.scrollex.min.js"><\/script>');
-    document.write('<script src="/assets/js/jquery.scrolly.min.js"><\/script>');
-    document.write('<script src="/assets/js/browser.min.js"><\/script>');
-    document.write('<script src="/assets/js/breakpoints.min.js"><\/script>');
-    document.write('<script src="/assets/js/util.js"><\/script>');
-    document.write('<script src="/assets/js/main.js"><\/script>');
+    document.write('<script src="/assets/js/jquery.scrollex.min.js" defer><\/script>');
+    document.write('<script src="/assets/js/jquery.scrolly.min.js" defer><\/script>');
+    document.write('<script src="/assets/js/browser.min.js" defer><\/script>');
+    document.write('<script src="/assets/js/breakpoints.min.js" defer><\/script>');
+    document.write('<script src="/assets/js/util.js" defer><\/script>');
+    document.write('<script src="/assets/js/main.js" defer><\/script>');
 }
 </script>
 
