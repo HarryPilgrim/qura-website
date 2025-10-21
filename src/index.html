@@ -254,14 +254,14 @@ tags: "sitemap"
             <!-- Video 1 - Progress Tracker -->
             <div class="qura-video-card">
                 <div class="qura-video-portrait-wrapper">
-                    <iframe 
-                        src="https://www.youtube.com/embed/t3WikraXsz8" 
-                        title="Qura Progress Tracker Feature"
-                        frameborder="0" 
-                        loading="lazy"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                    </iframe>
+
+                            <div class="qura-lite-youtube" data-video-id="t3WikraXsz8">
+            <img class="qura-lite-youtube-thumbnail" 
+                 src="https://i.ytimg.com/vi/t3WikraXsz8/hqdefault.jpg" 
+                 alt="Progress Tracker Demo" 
+                 loading="lazy">
+            <div class="qura-lite-youtube-playbtn"></div>
+        </div>
                 </div>
                 <div class="qura-video-info">
                     <h3>📊 Progress Tracker</h3>
@@ -272,14 +272,14 @@ tags: "sitemap"
             <!-- Video 2 - AI Therapist -->
             <div class="qura-video-card">
                 <div class="qura-video-portrait-wrapper">
-                    <iframe 
-                        src="https://www.youtube.com/embed/ftFkfkieGi8" 
-                        title="Meet Aida - Qura AI Therapist"
-                        frameborder="0" 
-                        loading="lazy"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                    </iframe>
+
+                            <div class="qura-lite-youtube" data-video-id="ftFkfkieGi8">
+            <img class="qura-lite-youtube-thumbnail" 
+                 src="https://i.ytimg.com/vi/ftFkfkieGi8/hqdefault.jpg" 
+                 alt="Aida AI Demo" 
+                 loading="lazy">
+            <div class="qura-lite-youtube-playbtn"></div>
+        </div>
                 </div>
                 <div class="qura-video-info">
                     <h3>🤖 Aida, Your AI Therapist</h3>
@@ -290,14 +290,13 @@ tags: "sitemap"
             <!-- Video 3 - Breathing Exercises -->
             <div class="qura-video-card">
                 <div class="qura-video-portrait-wrapper">
-                    <iframe 
-                        src="https://www.youtube.com/embed/WkHdTqHisSU" 
-                        title="Qura Breathing Exercises"
-                        frameborder="0" 
-                        loading="lazy"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                    </iframe>
+        <div class="qura-lite-youtube" data-video-id="WkHdTqHisSU">
+            <img class="qura-lite-youtube-thumbnail" 
+                 src="https://i.ytimg.com/vi/WkHdTqHisSU/hqdefault.jpg" 
+                 alt="Breathing Exercises Demo" 
+                 loading="lazy">
+            <div class="qura-lite-youtube-playbtn"></div>
+        </div>
                 </div>
                 <div class="qura-video-info">
                     <h3>🫁 Breathing Exercises</h3>
@@ -349,6 +348,52 @@ tags: "sitemap"
 </section>
 
 <style>
+
+    /* YouTube Lite Embed */
+.qura-lite-youtube {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    cursor: pointer;
+}
+
+.qura-lite-youtube-thumbnail {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.qura-lite-youtube-playbtn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 68px;
+    height: 48px;
+    background: rgba(255, 0, 0, 0.9);
+    border-radius: 14px;
+    transition: background 0.3s;
+}
+
+.qura-lite-youtube:hover .qura-lite-youtube-playbtn {
+    background: rgba(255, 0, 0, 1);
+}
+
+.qura-lite-youtube-playbtn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-40%, -50%);
+    width: 0;
+    height: 0;
+    border-left: 20px solid #fff;
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+}
 /* Video Section - Calm Blue Theme */
 .qura-video-section {
     background: linear-gradient(135deg, #2c5f7c 0%, #1a3d52 100%);
@@ -921,6 +966,27 @@ $(document).ready(function() {
         current = (current + 1) % images.length;
         images.eq(current).fadeIn(1000);
     }, 5000);
+});
+</script>
+
+<script>
+// Lite YouTube - only loads iframe on click
+document.querySelectorAll('.qura-lite-youtube').forEach(function(element) {
+    element.addEventListener('click', function() {
+        var videoId = this.getAttribute('data-video-id');
+        var iframe = document.createElement('iframe');
+        iframe.setAttribute('src', 'https://www.youtube.com/embed/' + videoId + '?autoplay=1');
+        iframe.setAttribute('frameborder', '0');
+        iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+        iframe.setAttribute('allowfullscreen', '');
+        iframe.style.position = 'absolute';
+        iframe.style.top = '0';
+        iframe.style.left = '0';
+        iframe.style.width = '100%';
+        iframe.style.height = '100%';
+        this.innerHTML = '';
+        this.appendChild(iframe);
+    });
 });
 </script>
 
